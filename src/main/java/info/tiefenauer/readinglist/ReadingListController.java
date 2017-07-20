@@ -13,7 +13,7 @@ import java.util.Optional;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @Controller
-@RequestMapping("*")
+@RequestMapping("/readingList")
 public class ReadingListController {
 
     private ReadingListRepository readingListRepository;
