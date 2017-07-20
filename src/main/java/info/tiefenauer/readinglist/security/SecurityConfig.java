@@ -36,7 +36,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-        auth.userDetailsService(username -> readerRepository.findOne(username));
+        auth.userDetailsService(userService());
+    }
+
+    @Bean
+    public UserDetailsService userService() {
+        return username -> readerRepository.findOne(username);
     }
 
 }

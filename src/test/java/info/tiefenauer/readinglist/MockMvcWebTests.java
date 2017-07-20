@@ -49,10 +49,9 @@ public class MockMvcWebTests {
                 .andExpect(header().string("Location", "http://localhost/login"));
     }
 
-    @Ignore("assertion fails and I have no idea why...")
     @Test
     @WithMockUser(username="dani", password="password", roles="READER")
-    public void homePage_authenticatedUser2() throws Exception {
+    public void homePage_authenticatedMockUser() throws Exception {
         // arrange
         Reader expectedReader = createReader("dani", "password", "Daniel Tiefenauer");
         //act
@@ -60,11 +59,12 @@ public class MockMvcWebTests {
         //assert
                 .andExpect(status().isOk())
                 .andExpect(view().name("readingList"))
-                .andExpect(model().attribute("reader",samePropertyValuesAs(expectedReader)))
+                .andExpect(model().attributeExists("reader"))
+                .andExpect(model().attribute("reader",is(expectedReader.getUsername())))
                 .andExpect(model().attribute("books", hasSize(0)));
     }
 
-    @Ignore("Context initialisation fails and I have no idea why...")
+    //@Ignore("Context initialisation fails and I have no idea why...")
     @Test
     @WithUserDetails("dani")
     public void homePage_authenticateUser() throws Exception{

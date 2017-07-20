@@ -20,7 +20,6 @@ public class ReadingListController {
     private ReadingListRepository readingListRepository;
     private final AmazonProperties amazonProperties;
 
-
     @Autowired
     public ReadingListController(ReadingListRepository readingListRepository, AmazonProperties amazonProperties) {
         this.readingListRepository = readingListRepository;
