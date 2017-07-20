@@ -13,7 +13,7 @@ import java.util.Optional;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("*")
 public class ReadingListController {
 
     private ReadingListRepository readingListRepository;
@@ -23,7 +23,7 @@ public class ReadingListController {
         this.readingListRepository = readingListRepository;
     }
 
-    @RequestMapping(value="/{reader}", method= GET)
+    @RequestMapping(value = "/{reader}", method = GET)
     public String readersBooks(@PathVariable("reader") String reader, Model model) {
         List<Book> readingList = readingListRepository.findByReader(reader);
         if (readingList != null) {
@@ -32,7 +32,7 @@ public class ReadingListController {
         return "readingList";
     }
 
-    @RequestMapping(value="/{reader}", method=RequestMethod.POST)
+    @RequestMapping(value = "/{reader}", method = RequestMethod.POST)
     public String addToReadingList(@PathVariable("reader") String reader, Book book) {
         book.setReader(reader);
         readingListRepository.save(book);
