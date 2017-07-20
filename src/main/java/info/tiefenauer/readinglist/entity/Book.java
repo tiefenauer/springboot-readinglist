@@ -1,4 +1,4 @@
-package info.tiefenauer.readinglist;
+package info.tiefenauer.readinglist.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

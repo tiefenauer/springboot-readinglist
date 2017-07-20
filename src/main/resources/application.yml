@@ -1,0 +1,34 @@
+server:
+  port: 8443
+  ssl:
+    key-store: classpath:mykeys.jks
+    key-store-password: letmein
+    key-password: letmein
+spring:
+  thymeleaf:
+    cache: false
+logging:
+  level:
+    root: INFO
+amazon:
+  associateId: tiefenauer
+
+---
+
+spring:
+  profiles: development
+
+logging:
+  level:
+    root: DEBUG
+
+---
+
+spring:
+  profiles: production
+
+logging:
+  path: .
+  file: readinglist.log
+  level:
+    root: WARN
