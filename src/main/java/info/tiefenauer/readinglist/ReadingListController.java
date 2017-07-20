@@ -13,7 +13,7 @@ import java.util.List;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/readingList")
 public class ReadingListController {
 
     private ReadingListRepository readingListRepository;
@@ -36,7 +36,7 @@ public class ReadingListController {
     public String addToReadingList(@PathVariable("reader") String reader, Book book) {
         book.setReader(reader);
         readingListRepository.save(book);
-        return "redirect:/{reader}";
+        return "redirect:/readingList/{reader}";
     }
 
 }
