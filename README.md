@@ -14,3 +14,7 @@ Simple Spring Boot MVC Application with the following chapter topics
 * logging to file
 * defining the log level with profiles
 * custom error page
+
+## Chapter 04: Testing with Spring Boot
+* Web Testes
+* Security Tests
