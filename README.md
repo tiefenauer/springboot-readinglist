@@ -9,5 +9,8 @@ Simple Spring Boot MVC Application with the following chapter topics
 ## Chapter 03: Overriding Spring Boot auto-configuration
 * Securing application with ```spring-boot-starter-security```, including a custom login page
 * HTTPS over SSL with custom Keys (new url: https://localhost:8443/readingList/yourName)
+* using YAML as file format for application properties
+* externalizing a part of the properties to a bean based on a prefix
 * logging to file
-
+* defining the log level with profiles
+* custom error page
